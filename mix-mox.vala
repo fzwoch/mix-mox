@@ -206,7 +206,7 @@ class MixMoxApp : Gtk.Application {
 		reader.end_member ();
 
 		playbin.set_state (State.READY);
-		playbin.uri = "https://mixer.com/api/v1/channels/" + id.to_string ()+ "/manifest.m3u8";
+		playbin.uri = "https://mixer.com/api/v1/channels/" + id.to_string () + "/manifest.m3u8";
 		playbin.set_state (State.PLAYING);
 	}
 
