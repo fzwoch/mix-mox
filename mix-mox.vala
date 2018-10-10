@@ -182,10 +182,8 @@ class MixMoxApp : Gtk.Application {
 
 		var reader = new Json.Reader (parser.get_root ());
 
-		var found = reader.read_member ("error");
-		if (found == true) {
-			var error = reader.get_string_value ();
-			var dialog = new MessageDialog (window, DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.INFO, ButtonsType.CLOSE, error);
+		if (reader.read_member ("error")) {
+			var dialog = new MessageDialog (window, DialogFlags.DESTROY_WITH_PARENT, Gtk.MessageType.INFO, ButtonsType.CLOSE, reader.get_string_value ());
 			dialog.run ();
 			dialog.destroy ();
 			return;
