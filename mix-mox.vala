@@ -33,7 +33,7 @@ class MixMoxApp : Gtk.Application {
 
 		var header_bar = new Gtk.HeaderBar ();
 		header_bar.show_close_button = true;
-		header_bar.title = "Twit-Twat";
+		header_bar.title = "Mix-Mox";
 		window.set_titlebar (header_bar);
 
 		var sink = ElementFactory.make ("gtkglsink", null) as dynamic Element;
