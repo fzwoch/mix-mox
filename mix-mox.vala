@@ -194,6 +194,10 @@ class MixMoxApp : Gtk.Application {
 		}
 		reader.end_member ();
 
+		reader.read_member ("token");
+		var token = reader.get_string_value ();
+		reader.end_member ();
+
 		reader.read_member ("online");
 		var online = reader.get_boolean_value ();
 		reader.end_member ();
@@ -214,7 +218,7 @@ class MixMoxApp : Gtk.Application {
 		playbin.set_state (State.PLAYING);
 
 		var header_bar = window.get_titlebar () as Gtk.HeaderBar;
-		header_bar.subtitle = channel;
+		header_bar.subtitle = token;
 	}
 
 	static int main (string[] args) {
